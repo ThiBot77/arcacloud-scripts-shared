@@ -29,11 +29,6 @@ echo 3 > /proc/sys/vm/drop_caches
 # Update kernel
 echo "[*] Updating kernel..."
 apt-get update
-
-if grep -q "^ID=ubuntu" /etc/os-release; then
-  apt-get install -y linux-generic
-else
-  apt-get install -y linux-image-amd64
-fi
+apt-get upgrade -y
 
 echo "[!] Reboot required"
