@@ -16,8 +16,6 @@ scripts/
 - **`scripts/security/patch-cve.sh`** — Patches critical CVEs by blacklisting vulnerable kernel modules and updating the kernel
   - Handles CVE-2026-31431 (Copy Fail)
   - Handles CVE-2026 (Dirty Frag)
-  - Requires root privileges
-  - Requires system reboot after execution
 
 ## Usage
 
