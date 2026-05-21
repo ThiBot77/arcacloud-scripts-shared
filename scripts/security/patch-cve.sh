@@ -28,8 +28,12 @@ echo 3 > /proc/sys/vm/drop_caches
 
 # Update kernel
 echo "[*] Updating kernel..."
-update-initramfs -u -k all
 apt-get update
-apt-get install -y linux-image-amd64
+
+if grep -q "^ID=ubuntu" /etc/os-release; then
+  apt-get install -y linux-generic
+else
+  apt-get install -y linux-image-amd64
+fi
 
 echo "[!] Reboot required"
